@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+// import {Navbar} from '../Navbar/Navbar'
+import {AddCity} from './Components/AddCity';
+import { AddCountry } from './Components/AddCountry';
+import { Home } from './Components/Home';
+import {EditCountry} from './Components/EditCountry'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Navbar  } from './Components/Navbar/Navbar'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navbar/>
+     <Routes>
+       <Route path='/' element={<Home/>} />
+       <Route path={`/add-country`} element={<AddCountry/>} />
+       <Route path={`/add-city`} element={<AddCity/>} />
+       <Route path={`/edit-city/:id`} element={<EditCountry/>} />
+     </Routes>
     </div>
   );
 }

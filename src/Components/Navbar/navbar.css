@@ -1,0 +1,14 @@
+.navbar-main{
+    display: flex;
+    height:100px;
+    width:100%;
+    flex-direction: row-reverse;
+    background-color:black;
+}
+.navbar-main > a{
+    padding :25px;
+    color:white;
+    text-decoration: none;
+    
+
+}
